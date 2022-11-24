@@ -15,6 +15,7 @@ public class JerseyApplication extends ResourceConfig {
 
       @Override
       protected void configure () {
+        bindAsContract (SchemaFragmentLoader.class).in (Singleton.class);
         bindFactory (GraphQLFactory.class).to (GraphQL.class).in (Singleton.class);
         install (new ModulesPackageBinder ());
       }
