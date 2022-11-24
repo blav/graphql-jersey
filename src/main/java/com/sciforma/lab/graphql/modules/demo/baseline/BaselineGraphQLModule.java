@@ -10,14 +10,11 @@ import org.jvnet.hk2.annotations.Service;
 
 import static com.sciforma.lab.graphql.modules.demo.task.TaskGraphQLModule.TYPE_TASK;
 import static graphql.language.FieldDefinition.newFieldDefinition;
-import static graphql.language.ListType.newListType;
-import static graphql.language.NonNullType.newNonNullType;
-import static graphql.language.ObjectTypeDefinition.newObjectTypeDefinition;
 import static graphql.language.TypeName.newTypeName;
 
 @Service
 @Priority (30)
-@ModuleComponents (dataFetchers = { BaselineDataFetcher.class })
+@ModuleComponents (dataFetchers = { BaselineDataFetcher.class }, schemaFragments = "baseline.graphqls")
 public class BaselineGraphQLModule extends AbstractGraphQLModule {
 
   public static final String TYPE_BASELINE = "Baseline";
@@ -26,26 +23,6 @@ public class BaselineGraphQLModule extends AbstractGraphQLModule {
 
   @Override
   public void provideTypes (TypeDefinitionRegistry registry, Builder runtimeWiring) {
-    registry.add (newObjectTypeDefinition ()
-      .name (TYPE_BASELINE)
-      .fieldDefinition (newFieldDefinition ()
-        .name ("slots")
-        .type (newListType (newNonNullType (newTypeName (TYPE_SLOT).build ()).build ()).build ())
-        .build ())
-      .build ());
-
-    registry.add (newObjectTypeDefinition ()
-      .name (TYPE_SLOT)
-      .fieldDefinition (newFieldDefinition ()
-        .name ("start")
-        .type (newTypeName ("Int").build ())
-        .build ())
-      .fieldDefinition (newFieldDefinition ()
-        .name ("finish")
-        .type (newTypeName ("Int").build ())
-        .build ())
-      .build ());
-
     transform (registry, TYPE_TASK, builder -> builder
       .fieldDefinition (newFieldDefinition ()
         .name ("baseline")

@@ -1,0 +1,8 @@
+type Slot {
+    start: Int
+    finish: Int
+}
+
+type Baseline {
+    slots: [Slot!]!
+}
