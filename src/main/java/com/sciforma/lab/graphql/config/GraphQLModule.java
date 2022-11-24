@@ -31,9 +31,9 @@ public interface GraphQLModule {
 
         Optional.of (moduleClass)
           .map (c -> c.getAnnotation (ModuleComponents.class))
-          .map (ModuleComponents::coercings)
-          .ifPresent (coercings -> stream (coercings)
-            .forEach (coercing -> bindAsContract (coercing).in (RequestScoped.class)));
+          .map (ModuleComponents::coercions)
+          .ifPresent (coercions -> stream (coercions)
+            .forEach (coercion -> bindAsContract (coercion).in (RequestScoped.class)));
       }
     };
   }

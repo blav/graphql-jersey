@@ -17,6 +17,8 @@ public @interface ModuleComponents {
 
   Class<? extends DataFetcher<?>>[] dataFetchers () default {};
 
-  Class<? extends Coercing<?, ?>>[] coercings () default {};
+  Class<? extends Coercing<?, ?>>[] coercions () default {};
+
+  String[] schemaFragments () default {};
 
 }
