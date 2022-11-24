@@ -12,26 +12,17 @@ import static com.sciforma.lab.graphql.modules.core.QueryGraphQLModule.TYPE_QUER
 import static graphql.language.FieldDefinition.newFieldDefinition;
 import static graphql.language.ListType.newListType;
 import static graphql.language.NonNullType.newNonNullType;
-import static graphql.language.ObjectTypeDefinition.newObjectTypeDefinition;
 import static graphql.language.TypeName.newTypeName;
 
 @Service
 @Priority (10)
-@ModuleComponents (dataFetchers = ProjectsDataFetcher.class)
+@ModuleComponents (dataFetchers = ProjectsDataFetcher.class, schemaFragments = "project.graphqls")
 public class ProjectGraphQLModule extends AbstractGraphQLModule {
 
   public static final String TYPE_PROJECT = "Project";
 
   @Override
   public void provideTypes (TypeDefinitionRegistry registry, RuntimeWiring.Builder runtimeWiring) {
-    registry.add (newObjectTypeDefinition ()
-      .name (TYPE_PROJECT)
-      .fieldDefinition (newFieldDefinition ()
-        .name ("id")
-        .type (newNonNullType (newTypeName ("ID").build ()).build ())
-        .build ())
-      .build ());
-
     transform (registry, TYPE_QUERY, builder -> builder
       .fieldDefinition (newFieldDefinition ()
         .name ("projects")
