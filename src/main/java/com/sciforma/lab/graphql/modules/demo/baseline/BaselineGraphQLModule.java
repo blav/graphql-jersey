@@ -28,5 +28,9 @@ public class BaselineGraphQLModule extends AbstractGraphQLModule {
         .name ("baseline")
         .type (newTypeName (TYPE_BASELINE).build ())
         .build ()));
+
+    runtimeWiring.type (TYPE_TASK, typeWiring ->
+      typeWiring.dataFetcher ("baseline", newDataFetcherDelegate (BaselineDataFetcher.class)));
+
   }
 }

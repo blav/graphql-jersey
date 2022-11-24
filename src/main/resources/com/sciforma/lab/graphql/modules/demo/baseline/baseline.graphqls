@@ -1,6 +1,6 @@
 type Slot {
-    start: Int
-    finish: Int
+    start: Int!
+    finish: Int!
 }
 
 type Baseline {
