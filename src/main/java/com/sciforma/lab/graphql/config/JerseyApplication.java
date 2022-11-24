@@ -10,7 +10,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class JerseyApplication extends ResourceConfig {
 
   public JerseyApplication () {
-    registerClasses (GraphQLEndpoint.class);
+    registerClasses (GraphQLEndpoint.class, CorsFilter.class);
     register (new AbstractBinder () {
 
       @Override

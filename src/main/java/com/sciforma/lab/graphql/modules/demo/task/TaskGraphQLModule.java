@@ -1,4 +1,4 @@
-package com.sciforma.lab.graphql.modules.demo;
+package com.sciforma.lab.graphql.modules.demo.task;
 
 import javax.annotation.Priority;
 
@@ -8,7 +8,7 @@ import graphql.schema.idl.RuntimeWiring.Builder;
 import graphql.schema.idl.TypeDefinitionRegistry;
 import org.jvnet.hk2.annotations.Service;
 
-import static com.sciforma.lab.graphql.modules.demo.ProjectGraphQLModule.TYPE_PROJECT;
+import static com.sciforma.lab.graphql.modules.demo.project.ProjectGraphQLModule.TYPE_PROJECT;
 import static graphql.language.FieldDefinition.newFieldDefinition;
 import static graphql.language.ListType.newListType;
 import static graphql.language.NonNullType.newNonNullType;

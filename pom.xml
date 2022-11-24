@@ -51,6 +51,12 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-java-servlet -->
+    <dependency>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <artifactId>graphql-java-servlet</artifactId>
+      <version>14.0.0</version>
+    </dependency>
 
   </dependencies>
 </project>
