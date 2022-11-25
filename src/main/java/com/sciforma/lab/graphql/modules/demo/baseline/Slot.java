@@ -1,5 +1,7 @@
 package com.sciforma.lab.graphql.modules.demo.baseline;
 
+import java.time.Instant;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,8 +11,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Slot {
 
-  private Long start;
+  private Instant start;
 
-  private Long finish;
+  private Instant finish;
 
 }

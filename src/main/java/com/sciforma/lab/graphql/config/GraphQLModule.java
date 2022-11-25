@@ -16,7 +16,8 @@ import static java.util.Arrays.stream;
 @Contract
 public interface GraphQLModule {
 
-  void provideTypes (TypeDefinitionRegistry registry, RuntimeWiring.Builder runtimeWiring);
+  default void provideTypes (TypeDefinitionRegistry registry, RuntimeWiring.Builder runtimeWiring) {
+  }
 
   static <M extends GraphQLModule> Binder newModuleBinder (@NotNull Class<M> moduleClass) {
     return new AbstractBinder () {
