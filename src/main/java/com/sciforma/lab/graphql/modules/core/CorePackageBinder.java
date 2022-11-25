@@ -8,6 +8,6 @@ public class CorePackageBinder extends AbstractBinder {
 
   @Override
   protected void configure () {
-    install (newModuleBinder (QueryGraphQLModule.class));
+    install (newModuleBinder (CoreGraphQLModule.class));
   }
 }

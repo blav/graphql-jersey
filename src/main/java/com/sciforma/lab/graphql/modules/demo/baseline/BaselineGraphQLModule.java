@@ -31,6 +31,5 @@ public class BaselineGraphQLModule extends AbstractGraphQLModule {
 
     runtimeWiring.type (TYPE_TASK, typeWiring ->
       typeWiring.dataFetcher ("baseline", newDataFetcherDelegate (BaselineDataFetcher.class)));
-
   }
 }

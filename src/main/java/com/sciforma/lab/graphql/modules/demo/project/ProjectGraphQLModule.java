@@ -8,7 +8,7 @@ import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.TypeDefinitionRegistry;
 import org.jvnet.hk2.annotations.Service;
 
-import static com.sciforma.lab.graphql.modules.core.QueryGraphQLModule.TYPE_QUERY;
+import static com.sciforma.lab.graphql.modules.core.CoreGraphQLModule.TYPE_QUERY;
 import static graphql.language.FieldDefinition.newFieldDefinition;
 import static graphql.language.ListType.newListType;
 import static graphql.language.NonNullType.newNonNullType;
